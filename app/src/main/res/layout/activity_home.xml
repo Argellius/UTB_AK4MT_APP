@@ -49,7 +49,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextText_poloha"
         android:layout_width="380dp"
         android:layout_height="30dp"
         android:layout_marginStart="15dp"
@@ -257,6 +257,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.343"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextText_poloha" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

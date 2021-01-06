@@ -11,9 +11,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
         Handler().postDelayed({
-            val intent = Intent(this@MainActivity, HomeActivity::class.java);
+            val intent = Intent(this@MainActivity, MenuActivity::class.java);
             startActivity(intent);
-        }, 5000)
+        }, 2500)
 
     }
 }

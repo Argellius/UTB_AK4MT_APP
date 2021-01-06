@@ -3,6 +3,7 @@ package com.example.utb_app
 import android.os.AsyncTask
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -15,13 +16,19 @@ import java.util.*
 
 class HomeActivity : AppCompatActivity() {
 
-    val CITY: String = "Pokojov"
+    var CITY: String = "Pokojov"
     val API: String = "26b062aa8ccc96362764a7997d99f063"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        val myBtn = findViewById<Button>(R.id.button_najit)
+        val poloha = findViewById<TextView>(R.id.editTextText_poloha)
 
+        myBtn.setOnClickListener{
+            this.CITY = poloha.text.toString();
+            weatherTask().execute()
+        }
         weatherTask().execute()
     }
 
@@ -80,10 +87,6 @@ class HomeActivity : AppCompatActivity() {
                 findViewById<TextView>(R.id.textView_vitr_value).text = vitrRychlost + " m/s"
                 findViewById<TextView>(R.id.textView_vychod_value).text = formatter.format(vychod*1000)
                 findViewById<TextView>(R.id.textView_zapad_value).text = formatter.format(zapad*1000)
-
-
-
-
 
                 findViewById<ProgressBar>(R.id.nacitani).visibility = View.GONE
                 findViewById<ConstraintLayout>(R.id.hlavniController).visibility = View.VISIBLE
